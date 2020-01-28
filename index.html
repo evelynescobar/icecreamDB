@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title> Hello, Vue.</title>
+	<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<img style="margin: 0 40% 50px; width:20%;"src="icecream.png">
+		<div id="app">
+    			<h1> Share your favorite ice-cream! </h1>
+
+    <div id="wrapper">
+		<div class="card">
+  		<input type="text" v-model="flavorInput" placeholder="Flavor...">
+  		<input type="text" v-model="sizeInput" placeholder="Size...">
+  		<input type="text" v-model="sprinklesInput" placeholder="Sprinkles? (y/n)">
+  		<input type="text" v-model="ratingInput" placeholder="Rating...">
+ 
+  		<button v-on:click="goButtonClicked">Go</button>
+  	</div>
+
+  		
+  			<div v-for="ice in ICECREAM">
+          <div class="block">
+            <span>
+            <!-- <div class="rating" v-for="user in orderedRating">{{ice.rating}}></div>
+            </span> -->
+            <div class="flavors">{{ice.flavor}}</div>
+            </span>
+
+          <div>
+            <p><strong>{{ratingTitle}}</strong> {{ice.rating}}</p>
+          </div>
+          <div>
+            <p><strong>{{sizeTitle}}</strong>
+            {{ice.size}}</p>
+          </div>
+           <div>
+             <p><strong>{{sprinklesTitle}}</strong>
+            {{ice.sprinkles}}</p>
+          </div>
+        </div>
+  	
+    </div>
+  		</div>
+    </div>
+
+  </body>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="app.js"></script>
+</html>
